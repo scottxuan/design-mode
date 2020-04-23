@@ -1,7 +1,5 @@
 package com.scottxuan.create.single;
 
-import com.scottxuan.create.single.hungrysingle.Singleton;
-
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.CyclicBarrier;
 
