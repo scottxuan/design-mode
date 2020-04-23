@@ -1,5 +1,6 @@
 package com.scottxuan.create.simplefactory;
 
+
 import static com.scottxuan.create.simplefactory.PayTypeEnum.*;
 
 /**

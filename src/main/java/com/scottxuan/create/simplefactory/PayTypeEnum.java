@@ -41,6 +41,6 @@ public enum PayTypeEnum {
                 return value;
             }
         }
-        return PayTypeEnum.WECHAT;
+        return null;
     }
 }
