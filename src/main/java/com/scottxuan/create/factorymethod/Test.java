@@ -5,12 +5,12 @@ package com.scottxuan.create.factorymethod;
  */
 public class Test {
     public static void main(String[] args) {
-        AbstractFactory factory1 = new Product1Factory();
-        AbstractProduct product1 = factory1.createProduct();
-        product1.onProduct();
+        ComputerFactory lenovoComputerFactory = new LenovoComputerFactory();
+        Computer lenovoComputer = lenovoComputerFactory.createComputer();
+        lenovoComputer.show();
 
-        AbstractFactory factory2 = new Product2Factory();
-        AbstractProduct product2 = factory2.createProduct();
-        product2.onProduct();
+        ComputerFactory asusComputerFactory = new AsusComputerFactory();
+        Computer asusComputer = asusComputerFactory.createComputer();
+        asusComputer.show();
     }
 }
