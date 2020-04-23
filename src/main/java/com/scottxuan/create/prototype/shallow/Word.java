@@ -1,4 +1,4 @@
-package com.scottxuan.create.prototype;
+package com.scottxuan.create.prototype.shallow;
 
 public class Word implements File {
     public File clone() {

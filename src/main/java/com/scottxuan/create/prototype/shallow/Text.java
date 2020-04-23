@@ -1,4 +1,4 @@
-package com.scottxuan.create.prototype;
+package com.scottxuan.create.prototype.shallow;
 
 public class Text {
     public static void main(String[] args) {

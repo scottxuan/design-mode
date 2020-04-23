@@ -1,4 +1,4 @@
-package com.scottxuan.create.prototype;
+package com.scottxuan.create.prototype.shallow;
 
 
 public interface File extends Cloneable{
