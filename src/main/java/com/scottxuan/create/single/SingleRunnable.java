@@ -4,6 +4,7 @@ import com.scottxuan.create.single.hungrysingle.Singleton;
 import com.scottxuan.create.single.lazysingle.LazySingleton;
 import lombok.SneakyThrows;
 
+import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.CyclicBarrier;
 
 /**
@@ -12,8 +13,10 @@ import java.util.concurrent.CyclicBarrier;
  */
 public class SingleRunnable implements Runnable {
     CyclicBarrier cyclicBarrier;
-    SingleRunnable(CyclicBarrier cyclicBarrier){
+    CountDownLatch countDownLatch;
+    SingleRunnable(CyclicBarrier cyclicBarrier,CountDownLatch countDownLatch){
         this.cyclicBarrier = cyclicBarrier;
+        this.countDownLatch = countDownLatch;
     }
     // 饿汉式测试
 //    @SneakyThrows
@@ -45,5 +48,6 @@ public class SingleRunnable implements Runnable {
     public void run() {
         cyclicBarrier.await();
         LazySingleton.getInstance4();
+        countDownLatch.countDown();
     }
 }

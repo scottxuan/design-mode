@@ -10,24 +10,23 @@ import java.util.concurrent.CyclicBarrier;
  * @date : 2020/4/23
  */
 public class Test {
-    private CountDownLatch startGate;
     private CountDownLatch endGate;
-    Test(CountDownLatch startGate,CountDownLatch endGate){
-        this.startGate = startGate;
+    Test(CountDownLatch endGate){
         this.endGate = endGate;
     }
 
     public static void main(String[] args) {
         final int N = 10000; // 线程数
-        Test test = new Test(new CountDownLatch(1),new CountDownLatch(N));
-        test.doTest(N);
+        CountDownLatch latch = new CountDownLatch(N);
+        Test test = new Test(latch);
+        test.doTest(N,latch);
         test.getLongTime();
     }
 
-    public void doTest(int N){
+    public void doTest(int N,CountDownLatch latch ){
         CyclicBarrier cyclicBarrier = new CyclicBarrier(N);
         for(int i=0;i<N;i++){
-            new Thread(new SingleRunnable(cyclicBarrier)).start();
+            new Thread(new SingleRunnable(cyclicBarrier,latch)).start();
         }
     }
 
