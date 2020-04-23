@@ -23,31 +23,35 @@ public class SingleRunnable implements Runnable {
 //    public void run() {
 //        cyclicBarrier.await();
 //        Singleton.getInstance();
+    //        countDownLatch.countDown();
 //    }
     // 懒汉式测试1
-//    @SneakyThrows
-//    public void run() {
-//        cyclicBarrier.await();
-//        LazySingleton.getInstance1();
-//    }
+    @SneakyThrows
+    public void run() {
+        cyclicBarrier.await();
+        LazySingleton.getInstance1();
+                countDownLatch.countDown();
+    }
 
 //    // 懒汉式测试2
 //    @SneakyThrows
 //    public void run() {
 //        cyclicBarrier.await();
 //        LazySingleton.getInstance2();
+    //        countDownLatch.countDown();
 //    }
 
 //    @SneakyThrows
 //    public void run() {
 //        cyclicBarrier.await();
 //        LazySingleton.getInstance3();
+    //        countDownLatch.countDown();
 //    }
 
-    @SneakyThrows
-    public void run() {
-        cyclicBarrier.await();
-        LazySingleton.getInstance4();
-        countDownLatch.countDown();
-    }
+//    @SneakyThrows
+//    public void run() {
+//        cyclicBarrier.await();
+//        LazySingleton.getInstance4();
+//        countDownLatch.countDown();
+//    }
 }
