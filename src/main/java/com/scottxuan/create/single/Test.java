@@ -1,5 +1,7 @@
 package com.scottxuan.create.single;
 
+import com.scottxuan.create.single.hungrysingle.Singleton;
+
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.CyclicBarrier;
 
@@ -19,19 +21,21 @@ public class Test {
         final int N = 10000; // 线程数
         Test test = new Test(new CountDownLatch(1),new CountDownLatch(N));
         test.doTest(N);
+        test.getLongTime();
     }
 
-    public long doTest(int N){
+    public void doTest(int N){
         CyclicBarrier cyclicBarrier = new CyclicBarrier(N);
         for(int i=0;i<N;i++){
             new Thread(new SingleRunnable(cyclicBarrier)).start();
         }
+    }
+
+    public long getLongTime(){
         long start = System.currentTimeMillis();
-        //所有阻塞的任务同时开始
-        startGate.countDown();
         try {
             //主线程阻塞,等待其他所有 worker 线程完成后再执行
-            startGate.await();
+            endGate.await();
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
