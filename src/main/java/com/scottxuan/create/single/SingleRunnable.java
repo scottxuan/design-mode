@@ -19,26 +19,26 @@ public class SingleRunnable implements Runnable {
         this.countDownLatch = countDownLatch;
     }
     // 饿汉式测试
-//    @SneakyThrows
-//    public void run() {
-//        cyclicBarrier.await();
-//        Singleton.getInstance();
-    //        countDownLatch.countDown();
-//    }
-    // 懒汉式测试1
     @SneakyThrows
     public void run() {
         cyclicBarrier.await();
-        LazySingleton.getInstance1();
-                countDownLatch.countDown();
+        Singleton.getInstance();
+        countDownLatch.countDown();
     }
+    // 懒汉式测试1
+//    @SneakyThrows
+//    public void run() {
+//        cyclicBarrier.await();
+//        LazySingleton.getInstance1();
+//        countDownLatch.countDown();
+//    }
 
 //    // 懒汉式测试2
 //    @SneakyThrows
 //    public void run() {
 //        cyclicBarrier.await();
 //        LazySingleton.getInstance2();
-    //        countDownLatch.countDown();
+//        countDownLatch.countDown();
 //    }
 
 //    @SneakyThrows

@@ -16,7 +16,7 @@ public class Test {
     }
 
     public static void main(String[] args) {
-        final int N = 10000; // 线程数
+        final int N = 20000; // 线程数
         CountDownLatch latch = new CountDownLatch(N);
         Test test = new Test(latch);
         test.doTest(N,latch);
