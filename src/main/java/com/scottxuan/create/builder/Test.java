@@ -3,7 +3,7 @@ package com.scottxuan.create.builder;
 /**
  * @author : zhaoxuan
  */
-public class Customer {
+public class Test {
     public static void main(String[] args) {
         ComputerProducer producer = new ComputerProducer();
         Computer computer = producer.productConputer(new LenovoComputerBuilder());

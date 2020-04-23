@@ -5,7 +5,7 @@ import java.util.Map;
 /**
  * @author : zhaoxuan
  */
-public class Customer {
+public class Test {
     public static void main(String[] args) {
         //前端获取支付方式
         Map map = PayTypeEnum.toPair();

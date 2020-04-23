@@ -3,7 +3,7 @@ package com.scottxuan.create.factorymethod;
 /**
  * @author : zhaoxuan
  */
-public class Customer {
+public class Test {
     public static void main(String[] args) {
         AbstractFactory factory1 = new Product1Factory();
         AbstractProduct product1 = factory1.createProduct();

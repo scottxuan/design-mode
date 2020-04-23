@@ -3,6 +3,6 @@ package com.scottxuan.create.abstractfactory;
 /**
  * @author : zhaoxuan
  */
-public abstract class AbstractProduct1 {
-    abstract void showProduct1();
+public abstract class CPU {
+    abstract void show();
 }
