@@ -1,6 +1,6 @@
 package com.scottxuan.create.prototype.shallow;
 
-public class Text {
+public class Test {
     public static void main(String[] args) {
         File file1 = new Excel();
         file1.display();
