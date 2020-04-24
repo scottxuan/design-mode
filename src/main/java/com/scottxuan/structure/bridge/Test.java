@@ -6,9 +6,7 @@ package com.scottxuan.structure.bridge;
  */
 public class Test {
     public static void main(String[] args) {
-        Pen pen = new PenBrush();
-        Color color = new ColorRed();
-        pen.setColor(color);
+        Pen pen = new PenGangBi(new ColorRed());
         pen.write();
     }
 }

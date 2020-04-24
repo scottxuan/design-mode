@@ -6,7 +6,7 @@ package com.scottxuan.structure.bridge;
 public abstract class Pen {
     protected Color color;
 
-    public void setColor(Color color) {
+    public Pen(Color color) {
         this.color = color;
     }
 
