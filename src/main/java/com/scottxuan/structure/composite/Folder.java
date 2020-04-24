@@ -5,7 +5,6 @@ import java.util.List;
 
 /**
  * @author : zhaoxuan
- * @date : 2020/4/24
  */
 public class Folder implements IFile {
     List<IFile> fileList = new ArrayList<IFile>();
