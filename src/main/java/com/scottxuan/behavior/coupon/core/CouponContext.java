@@ -18,7 +18,11 @@ public class CouponContext {
         this.strategy = strategy;
     }
 
-    public BigDecimal handler(BigDecimal oldAmount){
-        return strategy.couponAmount(oldAmount);
+    public BigDecimal couponAmount(){
+        return strategy.couponAmount();
+    }
+
+    public BigDecimal afterCouponAmount(){
+        return strategy.afterCouponAmount();
     }
 }

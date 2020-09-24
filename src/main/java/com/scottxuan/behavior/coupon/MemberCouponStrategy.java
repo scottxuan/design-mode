@@ -1,28 +1,26 @@
 package com.scottxuan.behavior.coupon;
 
-import lombok.Getter;
-
 import java.math.BigDecimal;
 
 /**
  * @author : pc
  * @date : 2020/9/24
  */
-@Getter
-public class MemberCouponStrategy implements CouponStrategy {
-    private Integer customerId;
+public class MemberCouponStrategy extends AbstractCouponStrategy {
+    private BigDecimal memberDiscount;
 
     private MemberCouponStrategy() {
     }
 
-    public MemberCouponStrategy(Integer customerId) {
-        this.customerId = customerId;
+    public MemberCouponStrategy(BigDecimal memberDiscount, BigDecimal costPrice) {
+        super.costPrice = costPrice;
+        this.memberDiscount = memberDiscount;
     }
 
     @Override
-    public BigDecimal couponAmount(BigDecimal amount) {
-        if (customerId==null) {
-            return amount;
+    public BigDecimal couponAmount() {
+        if (memberDiscount == null) {
+            return new BigDecimal(0);
         }
         return null;
     }

@@ -10,15 +10,12 @@ import java.math.BigDecimal;
  */
 @Data
 public class CouponBo {
-    private Integer customerId;
     private Integer beans;
-    private BigDecimal cash;
-    private BigDecimal security;
+    private BigDecimal cashCoupon;
+    private BigDecimal insuranceCoupon;
+    private BigDecimal platDiscount;
+    private BigDecimal memberDiscount;
 
     private CouponBo() {
-    }
-
-    public CouponBo(Integer customerId) {
-        this.customerId = customerId;
     }
 }

@@ -9,20 +9,21 @@ import java.math.BigDecimal;
  * @date : 2020/9/24
  */
 @Getter
-public class CashCouponStrategy implements CouponStrategy {
-    private BigDecimal couponAmount;
+public class CashCouponStrategy extends AbstractCouponStrategy {
+    private BigDecimal cashCoupon;
 
     private CashCouponStrategy() {
     }
 
-    public CashCouponStrategy(BigDecimal couponAmount) {
-        this.couponAmount = couponAmount;
+    public CashCouponStrategy(BigDecimal cashCoupon,BigDecimal costPrice) {
+        super.costPrice = costPrice;
+        this.cashCoupon = cashCoupon;
     }
 
     @Override
-    public BigDecimal couponAmount(BigDecimal amount) {
-        if (couponAmount == null){
-            return amount;
+    public BigDecimal couponAmount() {
+        if (cashCoupon == null){
+            return new BigDecimal(0);
         }
         return null;
     }
